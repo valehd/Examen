@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Nombres</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+    <h2> Inicio de sesión</h2>
+
+    <form action="/Ejercicio2" method="post" class="Ejercicio2 form-container">
+        <label for="nombre">Ingresa tu Nombre :</label>
+        <input type="text" name="nombre" required value="{{ request.form['nombre'] }}"><br>
+
+        <label for="contraseña">Ingresa tu contraseña:</label>
+        <input type="text" name="contraseña" required value="{{ request.form['contraseña'] }}"><br>
+
+
+        <button type="submit">Verificar</button>
+    </form>
+
+
+</body>
+   {% if mensaje %}
+        <p>{{ mensaje }}</p>
+    {% endif %}
+</html>

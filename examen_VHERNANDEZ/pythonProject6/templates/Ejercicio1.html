@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Compras</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+
+<body>
+    <h2>Formulario de Compras</h2>
+
+
+      <form action="/Ejercicio1" method="post" class="Ejercicio1 form-container">
+        <label for="nombre">Ingresa tu nombre:</label>
+        <input type="text" name="nombre"  required value="{{ request.form['nombre'] }}"><br>
+
+        <label for="edad">Ingresa tu edad:</label>
+        <input type="number" name="edad" min="0" max="100" required value="{{ request.form['edad'] }}"><br>
+
+        <label for="tarros">Ingresa la cantidad de tarros de pintura a comprar:</label>
+        <input type="number" name="tarros" min="0"  required value="{{ request.form['tarros'] }}"><br>
+
+
+        <button type="submit">Calcular</button>
+    </form>
+</body>
+ {% if request.method == 'POST' %}
+
+    <p>Nombre: {{ nombre }}</p>
+    <p>Total sin descuento: ${{ total_sin_descuento }}</p>
+    <p>El descuento es: ${{ descuento_total }}</p>
+    <p>Total con descuento: ${{ total_con_descuento }}</p>
+{% endif %}
+
+</html>
